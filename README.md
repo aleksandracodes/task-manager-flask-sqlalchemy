@@ -4,6 +4,8 @@ Relational Database Management System mini-project created via Code Institute as
 
 This task manager was built using Flask, the SLQAlchemy ORM and a frontend framework called Materialize.
 
+- In addition to walk-through material I have added additional functionality to confirm user decision to delete either existing task or task category with use of modals.
+
 
 ![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
 
