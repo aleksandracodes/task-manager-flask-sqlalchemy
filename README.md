@@ -15,7 +15,7 @@ This task manager was built using Flask, the SLQAlchemy ORM and a frontend frame
 <details><summary>Click here to view project screenshots</summary>
 
 ![Screenshot](assets/images/flask-sqlalchemy-project-screenshot.png)
-![Screenshot-2](assets/images/flask-sqlalchemy-project-screenshott2.png)
+![Screenshot-2](assets/images/flask-sqlalchemy-project-screenshot2.png)
 ![Screenshot-3](assets/images/flask-sqlalchemy-project-screenshot3.png)
 ![Screenshot-4](assets/images/flask-sqlalchemy-project-screenshot4.png)
 
