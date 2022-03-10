@@ -5,7 +5,8 @@ from taskmanager.models import Category, Task
 
 @app.route("/")
 def home():
-    return render_template("tasks.html")
+    tasks = list(Task.query.order_by(Task.id).all())
+    return render_template("tasks.html", tasks=tasks)
 
 
 @app.route("/categories")
@@ -15,6 +16,7 @@ def categories():  # these are Python functions, not route names
     return render_template("categories.html", categories=categories)
     # first 'categories' is the variable name used in html template,
     # second 'categories' is a variable defined in the function above
+
 
 @app.route("/add_category", methods=["GET", "POST"])
 # both methods needed as we'll be submitting the data to the database
