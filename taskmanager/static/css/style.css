@@ -9,3 +9,16 @@ body {
 main {
     flex: 1 0 auto;
 }
+
+nav .brand-logo {
+margin-left: 10px;
+}
+
+.modal-footer {
+    text-align: center !important;
+    margin-bottom: 15px;
+}
+
+.modal-footer .btn{
+    margin: 0 5px !important;
+}
