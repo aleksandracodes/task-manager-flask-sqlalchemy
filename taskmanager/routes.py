@@ -10,6 +10,7 @@ def home():
 
 @app.route("/categories")
 def categories():  # these are Python functions, not route names
+    # extract a list of all of the categories available from the database
     categories = list(Category.query.order_by(Category.category_name).all())
     return render_template("categories.html", categories=categories)
     # first 'categories' is the variable name used in html template,
@@ -45,3 +46,22 @@ def delete_category(category_id):
     db.session.delete(category)
     db.session.commit()
     return redirect(url_for("categories"))
+
+
+@app.route("/add_task", methods=["GET", "POST"])
+def add_task():
+    # extract a list of all of the categories available from the database
+    categories = list(Category.query.order_by(Category.category_name).all())
+    if request.method == "POST":
+        # from models.py:
+        task = Task(
+            task_name=request.form.get("task_name"),
+            task_description=request.form.get("task_description"),
+            is_urgent=bool(True if request.form.get("is_urgent") else False),
+            due_date=request.form.get("due_date"),
+            category_id=request.form.get("category_id")
+        )
+        db.session.add(task)
+        db.session.commit()
+        return redirect(url_for("home"))
+    return render_template("add_task.html", categories=categories)
